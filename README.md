@@ -41,6 +41,8 @@ Results on NTIRE 2021 NonHomogeneous Dehazing Challenge testing images:
 <div style="text-align: center">
 <img alt="" src="/Image/test.png" style="display: inline-block;" />
 </div>
+
+
 ## Acknowledgement
 
 We thank the authors of [Res2Net](https://mmcheng.net/res2net/), [MWCNN](https://github.com/lpj0/MWCNN.git), and [KTDN](https://github.com/GlassyWu/KTDN). Part of our code is built upon their modules.
