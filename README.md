@@ -1,6 +1,6 @@
 # DW-GAN: A discrete wavelet transform GAN for NonHomogenous Image Dehazing
 
-This is the official PyTorch implement of DW-GAN.  See more details in  [[report]]() , [[paper]](), [[certificates]]( )
+This is the official PyTorch implement of DW-GAN.  See more details in  [[report]]() , [[paper]](https://arxiv.org/pdf/2104.08911.pdf), [[certificates]]( )
 
 ## Environment:
 
