@@ -1,6 +1,6 @@
 # DW-GAN: A discrete wavelet transform GAN for NonHomogenous Image Dehazing
 
-This is the official PyTorch implement of DW-GAN.  See more details in  [[report]]() , [[paper]](https://arxiv.org/pdf/2104.08911.pdf), [[certificates]]( )
+This is the official PyTorch implementation of DW-GAN.  See more details in  [[report]]() , [[paper]](https://arxiv.org/pdf/2104.08911.pdf), [[certificates]]( )
 
 ## Environment:
 
@@ -22,7 +22,7 @@ This is the official PyTorch implement of DW-GAN.  See more details in  [[report
 
 ## Test
 
-For model Inference, run following commands. Please check the test hazy image path (test.py line 12) and the output path (test.py line 13) .
+For inference, run following commands. Please check the test hazy image path (test.py line 12) and the output path (test.py line 13) .
 
 ```
 python test.py
