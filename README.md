@@ -52,7 +52,11 @@ We thank the authors of [Res2Net](https://mmcheng.net/res2net/), [MWCNN](https:/
 If our work helps your research, please consider to cite our paper:
 
 ```
-@article{
+@article{fu2021dw,
+  title={DW-GAN: A Discrete Wavelet Transform GAN for NonHomogeneous Dehazing},
+  author={Fu, Minghan and Liu, Huan and Yu, Yankun and Chen, Jun and Wang, Keyan},
+  journal={arXiv preprint arXiv:2104.08911},
+  year={2021}
 }
 ```
 
