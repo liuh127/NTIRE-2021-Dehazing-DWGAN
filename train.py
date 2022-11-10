@@ -31,10 +31,10 @@ args = parser.parse_args()
 learning_rate = args.learning_rate
 train_batch_size = args.train_batch_size
 train_epoch = args.train_epoch
-train_dataset = os.path.join('/home/eason/Music/NH-HAZE/')
+train_dataset = os.path.join('/your/path/')
 
 # --- test --- #
-test_dataset = os.path.join('/home/eason/Music/NH-HAZE/')
+test_dataset = os.path.join('/your/path/')
 predict_result = args.predict_result
 test_batch_size = args.test_batch_size
 
@@ -51,7 +51,6 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 MyEnsembleNet = Dehaze()
 print('MyEnsembleNet parameters:', sum(param.numel() for param in MyEnsembleNet.parameters()))
 DNet = Discriminator()
-
 # --- Build optimizer --- #
 G_optimizer = torch.optim.Adam(MyEnsembleNet.parameters(), lr=0.0001)
 scheduler_G = torch.optim.lr_scheduler.MultiStepLR(G_optimizer, milestones=[3000, 5000, 8000], gamma=0.5)
@@ -63,11 +62,9 @@ train_loader = DataLoader(dataset=dataset, batch_size=train_batch_size, shuffle=
 # --- Load testing data --- #
 test_dataset = dehaze_test_dataset(test_dataset)
 test_loader = DataLoader(dataset=test_dataset, batch_size=test_batch_size, shuffle=False, num_workers=0)
-
 MyEnsembleNet = MyEnsembleNet.to(device)
 DNet = DNet.to(device)
 writer = SummaryWriter()
-
 # --- Load the network weight --- #
 try:
     MyEnsembleNet.load_state_dict(torch.load(os.path.join(args.teacher_model, 'best.pkl')))
@@ -76,11 +73,9 @@ except:
     print('--- no weight loaded ---')
 # --- Define the perceptual loss network --- #
 vgg_model = vgg16(pretrained=True)
-# vgg_model.load_state_dict(torch.load(os.path.join(args.vgg_model , 'vgg16.pth')))
 vgg_model = vgg_model.features[:16].to(device)
 for param in vgg_model.parameters():
     param.requires_grad = False
-
 loss_network = LossNetwork(vgg_model)
 loss_network.eval()
 msssim_loss = msssim
@@ -117,13 +112,11 @@ for epoch in range(train_epoch):
         writer.add_scalars('training_img', {'img loss_l1': smooth_loss_l1.item(),
                                             'perceptual': perceptual_loss.item(),
                                             'msssim': msssim_loss_.item()
-
                                             }, iteration)
         writer.add_scalars('GAN_training', {'d_loss': D_loss.item(),
             'd_score': real_out.item(),
             'g_score': fake_out.item()
         }, iteration)
-
     if epoch % 5 == 0:
         print('we are testing on epoch: ' + str(epoch))
         with torch.no_grad():
