@@ -20,7 +20,7 @@ See more details in  [[report]](https://openaccess.thecvf.com/content/CVPR2021W/
 
 ## Pretrained Weights & Dataset
 
-1. Download [ImageNet pretrained weights](https://drive.google.com/file/d/1612XsgoUEx2Q3D7PPiLaEI5qZEEwVlVp/view?usp=sharing) and [Dehaze weights](https://drive.google.com/file/d/1JkeGhdNwKi_9jObamjMtMlQ_b1i8WQ3r/view?usp=sharing) and place into the folder ```./weights```.  
+1. Download [ImageNet pretrained weights](https://drive.google.com/file/d/1aZQyF16pziCxKlo7BvHHkrMwb8-RurO_/view?usp=drive_link) and [Dehaze weights](https://drive.google.com/file/d/1h_HaRWwvx-ViCCKJK9oODlwS_lWNxt4B/view?usp=sharing) and place into the folder ```./weights```.  
 2. Download the [NH-HAZE](https://data.vision.ee.ethz.ch/cvl/ntire20/nh-haze/) and [NH-HAZE2](https://competitions.codalab.org/competitions/28032#participate) dataset.
 
 ## Test
